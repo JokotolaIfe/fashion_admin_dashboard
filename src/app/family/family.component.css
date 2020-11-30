@@ -1,0 +1,118 @@
+.upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    top: 45%;
+    left: 40%;
+    cursor: pointer;
+  }
+  
+  .upload-btn-wrapper2 {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    top: 45%;
+    left: 20%;
+    margin: auto !important;
+    text-align: center !important;
+    cursor: pointer;
+  }
+
+  .container{
+    width: 100%;
+    height: auto;
+    text-align: center !important;
+    overflow: hidden;
+  }
+
+  .btn {
+    border: 2px solid #1d1c1c;
+    color: #1d1c1c;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .upload-btn-wrapper2 input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    text-align: center !important;
+  }
+
+  .backgrnd {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center !important;
+  }
+
+  .shadow {
+    background-color: rgb(240, 248, 255, 0.7);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center !important;
+  }
+
+  .loading {
+    width: 50px !important;
+    height: 50px !important;
+    margin: auto !important;
+  }
+
+  /* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.my_image {
+  height: 200px;
+  width: 200px;
+  border-radius: 8px;
+  margin: auto;
+  margin: 7%;
+  margin-bottom: 4%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.padding {
+  padding: 30px !important
+}

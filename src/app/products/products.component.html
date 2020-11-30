@@ -1,0 +1,241 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title"> Fashion Products</h4>
+                            <p class="category">Here are the list of products
+                                <button type="button" style="border-radius: 50%; float: right; cursor: pointer"  data-toggle="modal" data-target="#exampleModalCenter" class="shadow btn btn-danger"> + </button>
+                            </p>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" data-backdrop="false" focus="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle" style="float: left !important">Add a Product</h5>
+                                    <button type="button" style="float: right !important" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    <!-- <button type="button" class="shadow btn btn-dark" (click)="addUp(color_name, color_price)"> + </button> -->
+
+                                    </div>
+                                    <div class="modal-body text-center">
+                                            <div class="row text-center">
+                                              <div class="col-md-12">
+                                                <div class="well well-sm">
+                                                  <form class="form-horizontal" action="" method="post">
+                                                  <fieldset>
+
+                                                    <!-- Name input-->
+                                                    <div class="form-group">
+                                                      <label class="col-md-3 control-label" for="name">Name</label>
+                                                      <div class="col-md-9">
+                                                        <input id="name" [(ngModel)]="name" name="name" type="text" placeholder="Product name" class="form-control">
+                                                      </div>
+                                                    </div>
+                                            
+                                                    <!-- Email input-->
+                                                    <div class="form-group">
+                                                      <label class="col-md-3 control-label" for="price">Price</label>
+                                                      <div class="col-md-9">
+                                                        <input id="price" [(ngModel)]="price" name="price" type="number" placeholder="Price" class="form-control">
+                                                      </div>
+                                                    </div>
+                                                         
+                                                    <!-- Email input-->
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label" for="category"> Category</label>
+                                                        <div class="col-md-9">
+                                                        <select [(ngModel)]="category" name="category" id="category" class="browser-default form-control custom-select" placeholder="Select a category">
+                                                                <option [ngValue]="null" [disabled]="true">Category</option>
+                                                                <option *ngFor="let cat of categories?.data" value="{{cat?.id}}" >{{cat?.name}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                         <!-- Gender-->
+                                                    <div class="form-group">
+                                                          <label class="col-md-3 control-label" for="gender">Gender</label>
+                                                          <div class="col-md-9">
+                                                          <select [(ngModel)]="gender" name="gender" id="gender" class="browser-default form-control custom-select" placeholder="Select a gender">
+                                                              <option vale="male" selected>Male</option>
+                                                              <option value="female">Female</option>
+                                                              <option value="female">Unisex</option>
+                                                          </select>
+                                                        </div>
+                                                    </div>
+
+                                            Add Colors (<span *ngIf="1 > availablecolors?.length && !availablecolors[0]?.name">You are yet to add a color to this product</span>Click the add button to add image and color name)
+                                            <br>
+                                            <span *ngIf="availablecolors[0]?.name"> COLORS ADDED: <span style="font-weight: 700;">{{availablecolors?.length}}</span></span>
+                                            <span *ngIf="!availablecolors[0]?.name"> COLORS ADDED: 0</span>
+                                            <div class="row">
+                                                <div class="col-3 col-md-3 text-center" *ngFor="let color of availablecolors2; let i = index" style="position: relative; width: auto; display: block">
+                                                  <div (click)="popUp(color[i])" style="cursor: pointer; float: right">X</div> 
+                                                  <img style="border-radius: 5px" src="{{color?.image}}" width="60px">
+                                                    <div>{{color?.name}}</div>
+                                                </div>
+                                            </div>
+                                                    <!-- Message body -->
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                                <div class="col-md-2">
+                                                                        <button type="button" (click)="addUp(availablecolors, fileToUpload, color_price)" style="border-radius: 50%" class="shadow btn btn-dark"> + </button>     
+                                                                </div>
+                                                                <div class="col-md-10">
+                                                                    <div class="row">
+                                                                        <div class="col-md-5">
+                                                                            <input  [ngModelOptions]="{standalone: true}" [(ngModel)]="color_price" type="text" placeholder="Color Name" class="form-control"> 
+                                                                        </div>
+                                                                        <div class="col-md-5">
+                                                                            <input type="file" name="color_image" placeholder="Choose an image" class="form-control" accept="image/*"[ngModelOptions]="{standalone: true}" (change)="onFileChanged($event)"> 
+                                                                        </div>
+                                                                        <!-- <div style="cursor: pointer" class="col-md-2" (click)="popUp()">
+                                                                            <span style="font-weight: bold; font-size: 16px" aria-hidden="true">&times;</span>
+                                                                        </div> -->
+                                                                    </div>
+                                                                </div>  
+                                                        </div>  
+                                                    </div>
+                                            
+                                                    <!-- Form actions -->
+                                                    <div class="form-group">
+                                                      <div class="col-md-12 text-right">    
+                                                        <button type="submit" (click)="submit(name, price, category, availablecolors, gender)" [disabled]="!name || !price || !category || !availablecolors[0]?.name || !gender" class="btn btn-primary btn-lg">Submit</button>
+                                                      </div>
+                                                    </div>
+                                                  </fieldset>
+                                                  </form>
+                                                </div>
+                                              </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                   <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th *ngFor="let cell of headers">{{ cell }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr class="my_row" *ngFor="let row of products | slice: (page-1) * pageSize  : (page-1) * pageSize + pageSize"> -->
+                                            <tr  class="my_row" *ngFor="let row of products?.data | slice: (page-1) * pageSize  : (page-1) * pageSize + pageSize">
+                                            <td> <img src="{{row?.colours[0]?.image}}" style="height: 40px; width: 40px; border-radius: 4px;"> </td>
+                                            <td>{{row?.name}}</td>
+                                            <td>₦{{row?.price | number}}</td>
+                                            <td>{{row?.category?.name}}</td>
+                                            <td>{{row?.gender}}</td>
+                                            <td>{{row?.colours?.length}}</td>
+
+                                            <td>
+                                              
+                                                    <svg data-toggle="modal" [attr.data-target]="'#editProduct'+row?.id" class="edit_icon bi bi-pencil text-dark" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"/>
+                                                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z" clip-rule="evenodd"/>
+                                                    </svg>
+    
+                                                    <div class="modal fade"  [attr.id]="'editProduct'+row?.id" data-backdrop="false" focus="true" tabindex="-1" role="dialog">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                <h5 class="modal-title" style="float: left !important">Edit {{row?.name}}</h5>
+                                                                <button type="button" style="float: right !important" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                                </div>
+                                                                <div class="modal-body text-center">
+                                                                            <form class="form-horizontal" action="" method="post">
+                                                                                <fieldset>
+                              
+                                                                                  <!-- Name input-->
+                                                                                  <div class="form-group">
+                                                                                    <label class="col-md-3 control-label" for="name">Name</label>
+                                                                                    <div class="col-md-9">
+                                                                                      <input id="name" [(ngModel)]="row.name" name="name" type="text" placeholder="Product name" class="form-control">
+                                                                                    </div>
+                                                                                  </div>
+                                                                          
+                                                                                  <!-- Email input-->
+                                                                                  <div class="form-group">
+                                                                                    <label class="col-md-3 control-label" for="price">Price</label>
+                                                                                    <div class="col-md-9">
+                                                                                      <input id="price" [(ngModel)]="row.price " name="price" type="number" placeholder="Price" class="form-control">
+                                                                                    </div>
+                                                                                  </div>
+                                                                          
+                                                                                 <div class="row">
+                                                                                    <div class="col-3 text-center" *ngFor="let color of row?.colours" style="position: relative; width: auto; display: block">
+                                                                                        <img style="border-radius: 5px" src="{{color?.image}}" width="60px">
+                                                                                        <div>{{color?.name}}</div>
+                                                                                        <div (click)="removeColor(row?.id, color?.id)" style="cursor: pointer; float: right">X</div>
+                                                                                    </div>
+                                                                                 </div>
+
+                                                                                  <!-- Form actions -->
+                                                                                  <div class="form-group">
+                                                                                    <div class="col-md-12 text-right">    
+                                                                                      <button type="submit" data-dismiss="modal" aria-label="Close" aria-hidden="true" (click)="update(row?.name, row?.price, row?.id)" class="btn btn-primary btn-lg">Update</button>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </fieldset>
+                                                                            </form>
+                                                                </div>
+                                                            </div>
+                                                            </div>   
+                                                    </div>
+
+                                                    
+
+                                                    <svg data-toggle="modal" [attr.data-target]="'#deleteProduct' + row?.id" class="trash_icon bi bi-trash text-danger" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z"/>
+                                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" clip-rule="evenodd"/>
+                                                    </svg>
+                                                    <div class="modal fade" [attr.id]="'deleteProduct' + row?.id" data-backdrop="false" focus="true" tabindex="-1" role="dialog" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                <h5 class="modal-title" id="delete">Are you sure you want to remove this product from store</h5>
+                                                                </div>
+                                                                <div class="modal-body text-center">
+                                                                        <button type="submit" (click)="deleteProduct(row?.id)" class="btn btn-danger mb-2" data-dismiss="modal">Delete</button>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+        
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align: center !important">
+                                            <ngb-pagination
+                                                style="text-align: center !important"
+                                                [(page)]="page"
+                                                [pageSize]="pageSize"
+                                                [collectionSize]="products?.data?.length">
+                                            </ngb-pagination>
+<!-- 
+                                            <ngb-pagination>
+                                            <ng-template ngbPaginationFirst>First</ng-template>
+                                            <ng-template ngbPaginationLast>Last</ng-template>
+                                            <ng-template ngbPaginationPrevious>Prev</ng-template>
+                                            <ng-template ngbPaginationNext>Next</ng-template>
+                                            <ng-template ngbPaginationEllipsis>...</ng-template>
+                                            <ng-template ngbPaginationNumber let-page>{{ page }}</ng-template>
+                                            </ngb-pagination> -->
+                                        </tr>
+                                    </tbody>
+                              </table>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

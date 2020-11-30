@@ -1,0 +1,71 @@
+.form_container {
+  margin: auto !important;
+  text-align: center !important;
+}
+
+.my_btn {
+  width: 100%;
+  height: auto;
+  line-height: 46px;
+  font-size: 24px;
+  padding: 10px;
+  border: solid 1px #353333;
+  color: #353333;
+  background-color: white;
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.my_btn:hover {
+margin-top: 20px;
+cursor: pointer;
+background-color: #353333;
+color: white;
+width: 100%;
+height: auto;
+line-height: 46px;
+font-size: 24px;
+padding: 10px;
+text-align: center;
+border: solid 1px #353333;
+animation: fadeIn ease 1s;
+-webkit-animation: fadeIn ease 1s;
+-moz-animation: fadeIn ease 1s;
+-o-animation: fadeIn ease 1s;
+-ms-animation: fadeIn ease 1s; 
+}
+
+
+@media only screen and (max-width: 600px) {
+  .form {
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    right: 50%;
+    width: 22em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -11em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    text-align: center !important;
+  }
+ }
+
+
+ @media only screen and (min-width: 600px) {
+  .form {
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    right: 50%;
+    width: 30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    text-align: center !important;
+  }
+ }

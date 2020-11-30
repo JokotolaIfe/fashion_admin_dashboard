@@ -1,0 +1,17 @@
+<div *ngIf="!response?.access_token || response?.access_token === null" class="container">
+	<div class="form">
+		<div class="form_container">
+			<h4>Arike Admin Portal</h4>
+			<input type="email" name="email" [(ngModel)]="email" class="form-control" autocomplete="off" id="email" placeholder="Enter your email">
+			<br>
+			<input type="password" name="password" [(ngModel)]="password" autocomplete="off" class="form-control" id="password" placeholder="Enter your password">
+			<br>
+			<label *ngIf="error" style="color: rgb(90, 3, 3)">{{error}}</label>
+			<div class="my_btn" (click)="signIn(email, password)">
+			<img src="../assets/loading.gif" *ngIf="loading" width="40px" height="40px"> Login to Dashboard
+			</div> 
+		  </div>
+	</div>
+</div>
+
+<router-outlet *ngIf="response?.access_token"></router-outlet>

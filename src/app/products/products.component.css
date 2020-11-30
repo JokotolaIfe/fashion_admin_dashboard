@@ -1,0 +1,195 @@
+.w-100 {
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.small-box {
+    width: 60px;
+    margin: auto;
+    margin-left: 2px;
+    margin-right: 2px
+}
+input {
+    border-color: #C8C6C5;
+    color: #C8C6C5;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin: auto;
+}
+
+select {
+    border-color: #C8C6C5;
+    color: #C8C6C5;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin: auto;
+}
+
+textarea {
+    border-color: #C8C6C5;
+    color: #C8C6C5
+}
+
+.picture {
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.edit_icon {
+    color: white !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.trash_icon {
+    color: white !important;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.my_row:hover  .edit_icon {
+    color: #110d0d !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.my_row:hover  .trash_icon {
+    color: red !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btn .btn-danger .active{
+    background-color: #110d0d !important;
+    color: white !
+}
+
+.active{
+    background-color: #110d0d !important;
+    color: white !important
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The switch - the box around the slider */
+
+/* .my_switch {
+    margin: auto !important;
+    text-align: center !important
+} */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+  }
+  
+
+
+  .featured:checked + .slider {
+    background-color: #3d3d3d;
+  }
+  
+  .featured:focus + .slider {
+    box-shadow: 0 0 1px #3d3d3d;
+  }
+  
+  .featured:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+  }
+
+
+
+  .best_selling:checked + .slider {
+    background-color: #2f7a2f;
+  }
+  
+  .best_selling:focus + .slider {
+    box-shadow: 0 0 1px #2f7a2f;
+  }
+  
+  .best_selling:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+  }
+
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 19px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .my_label {
+    font-size: 11px !important
+  }

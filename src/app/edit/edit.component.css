@@ -1,0 +1,97 @@
+.upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    top: 45%;
+    left: 40%;
+    cursor: pointer;
+  }
+  
+  .upload-btn-wrapper2 {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    top: 45%;
+    left: 20%;
+    margin: auto !important;
+    text-align: center !important;
+    cursor: pointer;
+  }
+
+  .upload-btn-wrapper3 {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    top: 45%;
+    left: 30%;
+    margin: auto !important;
+    text-align: center !important;
+    cursor: pointer;
+  }
+
+  .container{
+    width: 100%;
+    height: auto;
+    text-align: center !important;
+    overflow: hidden;
+  }
+
+  .btn {
+    border: 2px solid #1d1c1c;
+    color: #1d1c1c;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .upload-btn-wrapper2 input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    text-align: center !important;
+  }
+
+
+  .upload-btn-wrapper3 input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    text-align: center !important;
+  }
+
+  .backgrnd {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center !important;
+  }
+
+  .shadow {
+    background-color: rgb(240, 248, 255, 0.7);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center !important;
+  }
+
+  .loading {
+    width: 50px !important;
+    height: 50px !important;
+    margin: auto !important;
+  }

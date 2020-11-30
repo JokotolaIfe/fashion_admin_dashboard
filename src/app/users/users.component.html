@@ -1,0 +1,66 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title"> Registered Users </h4>
+                        <div>Switch role by clicking the switch button. Left to disable User as admin Right to enable user as admin</div>
+                        <span>Disable user by swithing the deactivate switch to the right</span>
+
+                    </div>
+
+
+               <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of headers">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="my_row" *ngFor="let row of all_users?.data" style="cursor: pointer">
+                                        <!-- this.headers = ['Name', 'Phone', 'Email', 'State', 'Address', 'Updated', 'Registered', 'Updated'] -->
+
+                                        <td>{{row?.name}}</td>
+                                        <td>{{row?.phone}}</td>
+                                        <td>{{row?.email}}</td>
+                                        <td>{{row?.created_at | date: 'E. MMM d y'}}</td>
+                                        <td>
+                                            <!-- <span style="float: left">User</span> -->
+                                            <div class="my_switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" (click)="changeRole(row?.id, row?.role)" [checked]="row?.role === 'admin'">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                            <!-- <span>Admin</span>    -->
+                                        </td>
+
+                                        <td>
+                                                <div class="my_switch">
+                                                    <label class="switch">
+                                                        <input class="activate" type="checkbox" (click)="deactivate(row?.id, row?.is_active)" [checked]="row?.is_active === '0'">
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                </div>
+                                                <!-- <span>Admin</span>    -->
+                                        </td>
+                                    </tr>
+                                    <tr style="text-align: center !important">
+                                        <ngb-pagination
+                                            style="text-align: center !important"
+                                            [(page)]="page"
+                                            [pageSize]="pageSize"
+                                            [collectionSize]="all_users?.length">
+                                        </ngb-pagination>
+                                    </tr>
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

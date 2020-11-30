@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title"> Subscriptions</h4>
+                    </div>
+
+
+               <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of headers">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="my_row" *ngFor="let row of subs" style="cursor: pointer">
+
+                                        <td>{{row?.email}}</td>
+                                        <td>{{row?.date | date: 'E. MMM d y'}}</td>
+                                    </tr>
+                                    <tr style="text-align: center !important">
+                                        <ngb-pagination
+                                            style="text-align: center !important"
+                                            [(page)]="page"
+                                            [pageSize]="pageSize"
+                                            [collectionSize]="subs?.length">
+                                        </ngb-pagination>
+                                    </tr>
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600" rel="stylesheet" type="text/css">
+</head>
+<body>
+        <div class="main-section">
+            <div class="dashbord">
+                <div class="icon-section">
+                    <i class="fa fa-users" aria-hidden="true"></i><br>
+                    <small>Users</small>
+                    <p>{{all_users?.length}}</p>
+                </div>
+                <div class="detail-section">
+                    <a routerLink="/users">More Info </a>
+                </div>
+            </div>
+            <div class="dashbord dashbord-green">
+                <div class="icon-section">
+                    <i class="fa fa-tasks" aria-hidden="true"></i><br>
+                    <small>Categories</small>
+                    <p>{{all_categories?.length}}</p>
+                </div>
+                <div class="detail-section">
+                    <a routerLink="/tables">More Info </a>
+                </div>
+            </div>
+            <div class="dashbord dashbord-orange">
+                <div class="icon-section">
+                    <i class="pe-7s-cash    " aria-hidden="true"></i><br>
+                    <small>Payments</small>
+                    <p>{{all_payments?.length}}</p>
+                </div>
+                <div class="detail-section">
+                    <a routerLink="/payments">More Info </a>
+                </div>
+            </div>
+            <div class="dashbord dashbord-blue">
+                <div class="icon-section">
+                    <i class="pe-7s-wristwatch" aria-hidden="true"></i><br>
+                    <small>Shoes</small>
+                    <p>{{all_products?.length}}</p>
+                </div>
+                <div class="detail-section">
+                    <a routerLink="/products">More Info </a>
+                </div>
+            </div>
+            <div class="dashbord dashbord-red">
+                <div class="icon-section">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i><br>
+                    <small>Orders</small>
+                    <p>{{all_orders?.length}}</p>
+                </div>
+                <div class="detail-section">
+                    <a routerLink="/orders">More Info </a>
+                </div>
+            </div>
+            <div class="dashbord dashbord-skyblue">
+                <div class="icon-section">
+                    <i class="fa fa-envelope" aria-hidden="true"></i><br>
+                    <small>Subscriptions</small>
+                    <p>{{all_subscriptions?.length}}</p>
+                </div>
+                <div class="detail-section">
+                    <a routerLink="/subscriptions">More Info </a>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

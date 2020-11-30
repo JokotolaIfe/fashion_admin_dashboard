@@ -1,0 +1,33 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+                        <div class="col-md-3" style="width: 200px !important; height: auto !important; padding: 10px !important" *ngFor="let family of families">
+                          <img src="{{family?.image}}" class="my_image" alt="{{family?.link}}" style="width:100%">
+                            <a href="{{family?.link}}" style="text-decoration: none">{{family?.link}}</a>
+                            <button type="submit" (click)="removeCoutreFamily(family?.id)" class="btn btn-danger">Remove</button>
+                        </div>
+        </div>
+        <div class="col-md-4">
+                <div style="text-align: center !important; padding-top: 10%">
+                        <span style="color: rgb(102, 96, 96)">Add a link and upload an image. A button will pop up, Then, you click to add</span>
+                            <br>
+
+                        <img src="../../assets/spinner.gif" *ngIf="loading" class="loading">
+                        <img *ngIf="image" class="my_image" src="{{image}}">
+                            <br>
+
+                        <label class="sr-only" for="inlineFormInputGroup">Link</label>
+                        <input type="text" [(ngModel)]="link" name="link"  class="form-control" id="inlineFormInputGroup" placeholder="www.instagram.com/user007">
+                            <br>
+                                
+                        <label class="sr-only" for="inlineFormInaroup">Upload Image</label>
+                        <input type="file" (change)="uploadFamilyCoutreImage($event)" name="myfile" />
+                            <br>
+
+                        <button type="submit" *ngIf="link && image" (click)="addCoutreFamily(link, image)" class="btn btn-danger">Add Fmaily Coutre</button>
+                   
+                    </div>
+                </div>
+        </div>
+</div>
+  -->
